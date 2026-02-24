@@ -1,0 +1,23 @@
+{
+    "camera": {
+        "id": 0,
+        "width": 1280,
+        "height": 720
+    },
+    "detection": {
+        "min_confidence": 0.8,
+        "track_confidence": 0.5
+    },
+    "controls": {
+        "mouse_speed_multiplier": 1.5,
+        "scroll_speed": 10,
+        "click_threshold_dist": 40
+    },
+    "gestures": {
+        "MOVE": "index_up",
+        "CLICK": "thumb_index_pinch",
+        "RIGHT_CLICK": "thumb_middle_pinch",
+        "SCROLL": "three_fingers_up",
+        "PAUSE": "fist"
+    }
+}

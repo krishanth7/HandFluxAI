@@ -1,18 +1,27 @@
 import cv2
 import time
 import pyautogui
+import json
+import os
 from src.hand_tracker import HandTracker
 from src.gesture_recognizer import GestureRecognizer
 from src.action_controller import ActionController
 from src.utils import calculate_distance
 
+def load_config():
+    config_path = os.path.join(os.path.dirname(__file__), 'config.json')
+    with open(config_path, 'r') as f:
+        return json.load(f)
+
 def main():
-    # 1. Initialize Components
-    cap = cv2.VideoCapture(0)
-    cap.set(3, 1280) # Width
-    cap.set(4, 720)  # Height
+    config = load_config()
     
-    tracker = HandTracker(detection_con=0.8)
+    # 1. Initialize Components
+    cap = cv2.VideoCapture(config['camera']['id'])
+    cap.set(3, config['camera']['width'])
+    cap.set(4, config['camera']['height'])
+    
+    tracker = HandTracker(detection_con=config['detection']['min_confidence'])
     recognizer = GestureRecognizer()
     
     sw, sh = pyautogui.size()
