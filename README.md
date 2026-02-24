@@ -1,109 +1,95 @@
-# HandFluxAI 🖐️✨
+# HandFluxAI: Enterprise-Grade Gesture Control System
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green.svg)](https://opencv.org/)
-[![MediaPipe](https://img.shields.io/badge/MediaPipe-Latest-orange.svg)](https://mediapipe.dev/)
-
-**HandFluxAI** is a professional-grade, real-time AI hand gesture control system. Leveraging cutting-edge computer vision and landmark detection, it allows users to control their computer interface through intuitive hand gestures captured via a standard webcam.
+HandFluxAI is a sophisticated, real-time computer vision framework designed to bridge the gap between human intuition and digital interaction. By leveraging advanced machine learning models and high-frequency landmark tracking, HandFluxAI provides a seamless, touchless interface for modern computing environments.
 
 ---
 
-## 🚀 Features
+## 🏛️ Project Vision
 
-- 🖱️ **Mouse Control**: Fluid cursor movement using your index finger.
-- 👆 **Clicking**: Simple pinch gestures for left and right clicks.
-- 🔊 **Volume Control**: Dynamic volume adjustment based on the distance between your thumb and index finger.
-- 📜 **Scrolling**: Multi-finger gestures for seamless page scrolling.
-- ⏯️ **Media Control**: Clench your fist to pause or play media content.
-- ⚡ **Real-time Performance**: High FPS tracking with minimal latency.
-- 🧼 **Visual Feedback**: Clean on-screen overlays showing tracking points and recognized gestures.
+In an era emphasizing touchless technology and ergonomic efficiency, HandFluxAI delivers a robust solution for hands-free system navigation. Whether for professional presentations, accessibility enhancement, or streamlined media management, HandFluxAI offers a precision-engineered control layer.
 
----
-
-## 🛠️ Tech Stack
-
-- **Computer Vision**: OpenCV
-- **Hand Tracking**: Google MediaPipe
-- **Numerical Processing**: NumPy
-- **System Automation**: PyAutoGUI
-- **OS Interface**: Python-based event mapping
+### Core Value Propositions
+*   **Precision Engineering**: Optimized for Python 3.14+ utilizing the latest MediaPipe Tasks API.
+*   **Ergonomic Efficiency**: Reduces repetitive physical strain by mapping natural gestures to system actions.
+*   **Plug-and-Play Integration**: Minimal setup required with intelligent automated model management.
 
 ---
 
-## 📦 Installation
+## ⚡ Key Capabilities
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/krishanth7/HandFluxAI.git
-   cd HandFluxAI
-   ```
-
-2. **Create a virtual environment (Optional but recommended):**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+| Feature | Technical Implementation | Business Impact |
+| :--- | :--- | :--- |
+| **Intelligent Cursor Flow** | Coordinate mapping with multi-stage smoothing | Precision navigation without hardware |
+| **Gesture Event Mapping** | Real-time state-vector analysis | Intuitive, low-latency interaction |
+| **Dynamic Audio Control** | Euclidean-distance based volume scaling | Seamless environmental control |
+| **Media Management** | Discrete state detection (Fist/Open) | Distraction-free content control |
+| **Modern Architecture** | Fully decoupled, OOP-based design | Scalable for enterprise customization |
 
 ---
 
-## 🎮 Usage
+## 🛠️ Technology Stack
 
-Run the main script to start the gesture recognition system:
-
-```bash
-python main.py
-```
-
-### Quick Commands:
-- **Index Finger Up**: Move Mouse
-- **Thumb + Index Pinch**: Left Click
-- **Thumb + Middle Pinch**: Right Click
-- **Fist (All Down)**: Pause/Play (Spacebar)
-- **Index + Middle + Ring Up**: Scroll Mode
-- **'q'**: Quit the application
+The HandFluxAI engine is powered by an industry-standard stack:
+*   **Engine**: Python 3.14+ (High Performance)
+*   **Vision Core**: MediaPipe Tasks API (TF-Lite Backbone)
+*   **Graphics Interface**: OpenCV (Real-time Frame Processing)
+*   **System Automation**: PyAutoGUI (Native OS Interaction)
+*   **Data Processing**: NumPy (Matrix Operations)
 
 ---
 
-## 🗺️ Project Structure
+## 🚀 Deployment Guide
 
-```text
-HandFluxAI/
-│
-├── main.py                 # Application entry point
-├── requirements.txt         # Project dependencies
-├── README.md               # Documentation
-├── .gitignore              # Git ignore rules
-├── LICENSE                 # MIT License
-│
-├── src/                    # Source code
-│   ├── hand_tracker.py     # MediaPipe wrapper logic
-│   ├── gesture_recognizer.py# Gesture interpretation logic
-│   ├── action_controller.py# System action execution
-│   └── utils.py            # Calculations & smoothing
-│
-├── assets/                 # Brand & demo assets
-│   └── screenshots/        # UI Screenshots
-│
-└── docs/                   # Technical documentation
-    └── architecture.md     # System design overview
-```
+### System Requirements
+*   Python 3.14 or higher
+*   Integrated or External Webcam
+*   Windows / macOS / Linux
+
+### Installation
+
+1.  **Initialize Repository**:
+    ```bash
+    git clone https://github.com/krishanth7/HandFluxAI.git
+    cd HandFluxAI
+    ```
+
+2.  **Environment Setup**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3.  **Launch Interface**:
+    ```bash
+    python main.py
+    ```
 
 ---
 
-## 📐 Architecture
+## 📐 Enterprise Architecture
 
-HandFluxAI follows a modular pipeline leveraging the **Modern MediaPipe Tasks API**:
-1. **Perception**: Captures webcam frames and uses the `HandLandmarker` task (TFLite backbone) to detect 21 landmarks.
-2. **Recognition**: Analyzes landmark orientations and finger state vectors to identify high-level gestures.
-3. **Execution**: Maps recognized gestures to system-level PyAutoGUI commands with multi-stage motion smoothing.
+The system is architected for maximum separation of concerns:
 
-> **Note on Python 3.14+**: This project is specifically optimized for Python 3.14+, using the updated MediaPipe Tasks architecture for maximum performance and future-proofing.
+1.  **Perception Layer**: Handles raw frame acquisition and landmark extraction.
+2.  **Intelligence Layer**: Interprets spatial data into semantic system intents.
+3.  **Action Layer**: Translates intents into high-level OS commands with jitter-reduction filtering.
+
+For detailed technical deep-dives, please refer to the [Architecture Documentation](docs/architecture.md).
+
+---
+
+## ⚙️ Configuration & Customization
+
+The system behavior can be precisely tuned via `config.json`. Adjust mouse sensitivity, click thresholds, and detection confidence to suit specific deployment environments.
+
+---
+
+## ⚖️ Compliance & Licensing
+
+Distributed under the **MIT License**. HandFluxAI is open-source and available for both commercial and personal integration.
+
+---
+
+**Project Lead:** [Krishanth](https://github.com/krishanth7) | **Corporate Liaison:** [krishanth.b.2008@gmail.com](mailto:krishanth.b.2008@gmail.com)
 
 ---
 
