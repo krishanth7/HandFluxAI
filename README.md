@@ -98,10 +98,12 @@ HandFluxAI/
 
 ## 📐 Architecture
 
-HandFluxAI follows a modular pipeline:
-1. **Perception**: Captures webcam frames and detects 21 hand landmarks.
-2. **Recognition**: Analyzes landmark orientations to identify predefined gestures.
-3. **Execution**: Maps recognized gestures to system-level PyAutoGUI commands with motion smoothing.
+HandFluxAI follows a modular pipeline leveraging the **Modern MediaPipe Tasks API**:
+1. **Perception**: Captures webcam frames and uses the `HandLandmarker` task (TFLite backbone) to detect 21 landmarks.
+2. **Recognition**: Analyzes landmark orientations and finger state vectors to identify high-level gestures.
+3. **Execution**: Maps recognized gestures to system-level PyAutoGUI commands with multi-stage motion smoothing.
+
+> **Note on Python 3.14+**: This project is specifically optimized for Python 3.14+, using the updated MediaPipe Tasks architecture for maximum performance and future-proofing.
 
 ---
 
